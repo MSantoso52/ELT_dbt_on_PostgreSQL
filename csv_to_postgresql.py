@@ -62,8 +62,8 @@ def import_csv_to_postgresql(csv_filepath, table_name, db_params):
 DB_CONFIG = {
     "host": "127.0.0.1",
     "database": "customer_db",
-    "user": "postgres",
-    "password": "duckdb",
+    "user": "*****",
+    "password": "*****",
     "port": "5432"
 }
 
