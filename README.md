@@ -49,7 +49,7 @@ This project to demonstrate data transformation using dbt.
       revenue     | numeric                |           |          |
 
     customer_db=# select * from customer.customerrevenue limit 10;
-    customer_id |   customername    | ordercount | revenue
+     customer_id |   customername    | ordercount | revenue
     -------------+-------------------+------------+---------
            11031 | Alexander Palmer  |          3 |  583.19
            11011 | Chelsey Lopez     |          3 |  528.65
