@@ -47,9 +47,63 @@ The use of dbt creates significant organizational leverage by transforming the d
    ```
 7. Checking dbt & run dbt model
    ```bash
-   dbt debug
+   ❯ dbt debug
+   16:28:37  Running with dbt=1.10.15
+   16:28:37  dbt version: 1.10.15
+   16:28:37  python version: 3.12.3
+   16:28:37  python path: /home/mulyo/dbt_snowflake/bin/python3
+   16:28:37  os info: Linux-6.8.0-88-generic-x86_64-with-glibc2.39
+   16:28:37  Using profiles dir at /home/mulyo/.dbt
+   16:28:37  Using profiles.yml file at /home/mulyo/.dbt/profiles.yml
+   16:28:37  Using dbt_project.yml file at /home/mulyo/dbt_snowflake/psql_wh/dbt_project.yml
+   16:28:37  adapter type: postgres
+   16:28:37  adapter version: 1.9.1
+   16:28:38  Configuration:
+   16:28:38    profiles.yml file [OK found and valid]
+   16:28:38    dbt_project.yml file [OK found and valid]
+   16:28:38  Required dependencies:
+   16:28:38   - git [OK found]
 
-   dbt run 
+   16:28:38  Connection:
+   16:28:38    host: localhost
+   16:28:38    port: 5432
+   16:28:38    user: postgres
+   16:28:38    database: customer_db
+   16:28:38    schema: customer
+   16:28:38    connect_timeout: 10
+   16:28:38    role: None
+   16:28:38    search_path: None
+   16:28:38    keepalives_idle: 0
+   16:28:38    sslmode: None
+   16:28:38    sslcert: None
+   16:28:38    sslkey: None
+   16:28:38    sslrootcert: None
+   16:28:38    application_name: dbt
+   16:28:38    retries: 1
+   16:28:38  Registered adapter: postgres=1.9.1
+   16:28:38    Connection test: [OK connection ok]
+
+   16:28:38  All checks passed!
+   ```
+   ```bash
+   ❯ dbt run
+   16:32:11  Running with dbt=1.10.15
+   16:32:11  Registered adapter: postgres=1.9.1
+   16:32:11  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+   There are 1 unused configuration paths:
+   - models.psql_wh.example
+   16:32:12  Found 1 model, 459 macros
+   16:32:12
+   16:32:12  Concurrency: 4 threads (target='dev')
+   16:32:12
+   16:32:12  1 of 1 START sql table model customer.customerrevenue .......................... [RUN]
+   16:32:12  1 of 1 OK created sql table model customer.customerrevenue ..................... [SELECT 100 in 0.17s]
+   16:32:12
+   16:32:12  Finished running 1 table model in 0 hours 0 minutes and 0.33 seconds (0.33s).
+   16:32:12
+   16:32:12  Completed successfully
+   16:32:12
+   16:32:12  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
    ```
 9. Checking the result
     ```sql
