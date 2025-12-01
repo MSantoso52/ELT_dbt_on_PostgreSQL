@@ -19,7 +19,7 @@ This project to demonstrate data transformation using dbt.
    dbt init
    ...
    Enter a number: 1
-   host (hostname for the instance): locahost
+   host (hostname for the instance): localhost
    port [5432]:
    user (dev username): postgres
    pass (dev password):
@@ -65,5 +65,28 @@ This project to demonstrate data transformation using dbt.
     ```
 # *Asumption*
 1. PostgreSQL run on system (recomended on docker)
-2. Database created for CSV imported (exp: customer_db)
-3. Table created (exp: cutomers, orders, orderitems)
+   ```bash
+   psql -U postgres -h 127.0.0.1 -p 5432
+   ```
+3. Database created for CSV imported (exp: customer_db)
+   ```sql
+   customer_db=# \l
+                                                       List of databases
+       Name     |  Owner   | Encoding | Locale Provider |  Collate   |   Ctype    | ICU Locale | ICU Rules |   Access privileges
+   -------------+----------+----------+-----------------+------------+------------+------------+-----------+-----------------------
+    customer_db | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           |
+    postgres    | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           |
+   
+   (2 rows)   
+   ```
+5. Table created (exp: cutomers, orders, orderitems)
+   ```sql
+   customer_db=# \d
+           List of relations
+    Schema |    Name    | Type  |  Owner
+   --------+------------+-------+----------
+    public | customers  | table | postgres
+    public | orderitems | table | postgres
+    public | orders     | table | postgres
+   (3 rows)
+   ```
