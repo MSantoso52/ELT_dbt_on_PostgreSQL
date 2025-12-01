@@ -1,7 +1,8 @@
 # Data Transformation on PostgreSQL with dbt
 
 # *Project Overview* 
-This project to demonstrate data transformation using dbt.
+Demonstration of using the dbt (data build tool) framework to perform sophisticated data transformations directly within a PostgreSQL database environment.
+The final output is a transformed dataset, like the customerrevenue table shown in the example, which is typically used for Business Intelligence (BI) and reporting.
 
 # *Problem To Be Solved*
 * The project addresses the challenges associated with traditional data transformation (ELT) processes, which often suffer from:
