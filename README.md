@@ -1,4 +1,5 @@
 # Data Transformation on PostgreSQL with dbt
+![Project Flow](postgres_dbt.png)
 
 # *Project Overview* 
 Demonstration of using the dbt (data build tool) framework to perform sophisticated data transformations directly within a PostgreSQL database environment.
